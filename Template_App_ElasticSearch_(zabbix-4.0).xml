@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2018-11-13T12:03:56Z</date>
+    <date>2019-05-12T15:43:18Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -1757,7 +1757,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>elastizabbix.py[{HOST.CONN},discover,indices]</key>
-                    <delay>600</delay>
+                    <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -1937,7 +1937,7 @@
                     <snmp_community/>
                     <snmp_oid/>
                     <key>elastizabbix.py[{HOST.CONN},discover,nodes]</key>
-                    <delay>600</delay>
+                    <delay>3600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -1960,7 +1960,7 @@
                         <formula/>
                         <conditions/>
                     </filter>
-                    <lifetime>3d</lifetime>
+                    <lifetime>1d</lifetime>
                     <description/>
                     <item_prototypes>
                         <item_prototype>
@@ -3780,6 +3780,10 @@
                                     <type>10</type>
                                     <params/>
                                 </step>
+                                <step>
+                                    <type>1</type>
+                                    <params>8</params>
+                                </step>
                             </preprocessing>
                             <jmx_endpoint/>
                             <timeout>3s</timeout>
@@ -3969,6 +3973,10 @@
                                 <step>
                                     <type>10</type>
                                     <params/>
+                                </step>
+                                <step>
+                                    <type>1</type>
+                                    <params>8</params>
                                 </step>
                             </preprocessing>
                             <jmx_endpoint/>
@@ -4233,219 +4241,7 @@
             <httptests/>
             <macros/>
             <templates/>
-            <screens>
-                <screen>
-                    <name>Elasticsearch Cluster</name>
-                    <hsize>2</hsize>
-                    <vsize>7</vsize>
-                    <screen_items>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>0</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>ElasticSearch Index Operations</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>1</x>
-                            <y>0</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>ElasticSearch Index Latency</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>1</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>ElasticSearch Doc index rate</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>1</x>
-                            <y>1</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>ElasticSearch Shard Movement</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>2</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>ElasticSearch Field data performance</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>1</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>3</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <key>elastizabbix.py[{HOST.CONN},health,number_of_pending_tasks]</key>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>0</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>1</x>
-                            <y>3</y>
-                            <colspan>1</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>ElasticSearch Cluster Nodes</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>3</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>20</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>4</y>
-                            <colspan>2</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>{#NAME} JVM Heap</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>2</max_columns>
-                            <application/>
-                        </screen_item>
-                        <screen_item>
-                            <resourcetype>20</resourcetype>
-                            <width>600</width>
-                            <height>100</height>
-                            <x>0</x>
-                            <y>6</y>
-                            <colspan>2</colspan>
-                            <rowspan>1</rowspan>
-                            <elements>0</elements>
-                            <valign>0</valign>
-                            <halign>0</halign>
-                            <style>0</style>
-                            <url/>
-                            <dynamic>0</dynamic>
-                            <sort_triggers>0</sort_triggers>
-                            <resource>
-                                <name>{#NAME} Transport Traffic</name>
-                                <host>Template App ElasticSearch</host>
-                            </resource>
-                            <max_columns>2</max_columns>
-                            <application/>
-                        </screen_item>
-                    </screen_items>
-                </screen>
-                <screen>
-                    <name>Elasticsearch Indices</name>
-                    <hsize>1</hsize>
-                    <vsize>1</vsize>
-                    <screen_items/>
-                </screen>
-            </screens>
+            <screens/>
         </template>
     </templates>
     <triggers>
